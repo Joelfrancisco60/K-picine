@@ -1,0 +1,29 @@
+Pour donner le droit de supprimer un fichier à un utilisateur, il faut lui accorder les droits nécessaires au niveau du dossier parent.
+
+Par exemple, si l'on veut créer un fichier qu'un utilisateur peut éditer mais pas supprimer
+, on devra lui donner des droits d'édition sur le fichier à l'aide de la commande chmod :
+
+chmod 664 dossier/fichier.txt
+
+Cela lui donnera les droits de lecture et d'écriture sur le fichier.
+
+Ensuite, on attribuera des droits de lecture et d'exécution au dossier pour qu'il puisse y accéder
+, mais sans droit de modification sur le dossier lui-même :
+
+chmod 755 dossier
+
+
+Et pour l'inverse, on doit :
+
+Donner uniquement le droit de lecture au fichier :
+
+chmod 444 dossier/fichier.txt
+
+Donner tous les droits au dossier parent :
+
+chmod 777 dossier
+
+
+Oui, il est logique de donner ces droits pour protéger certains fichiers contre la suppression ou pour gérer des fichiers, comme des fichiers temporaires, sans risquer de les modifier accidentellement.
+
+Ces droits ajoutent de la sécurité à notre espace de travail.
